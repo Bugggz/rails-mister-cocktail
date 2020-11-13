@@ -1,6 +1,9 @@
 <h1>Create a new cocktail !</h1>
+<div style = "margin: 12px">
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: "btn btn-primary" %>
   <tr><%= link_to 'Back to the bar', cocktails_path %></tr>
 <% end %>
+</div>
