@@ -1,14 +1,14 @@
-<html>
-  <head>
-  </head>
-
-  <body>
-    <h1>My favorite cocktails...</h1>
-    <ul><% @cocktails.each do |cocktail| %>
-      <li><%= link_to cocktail.name, cocktail_path(cocktail) %>
-      <% end %>
-    </ul>
-    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
-  </body>
-
-</html>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://unsplash.com/photos/MNToefm1Px4);">
+  <div class="container">
+    <h1>My favorite <strong>cocktails</strong> ...</h1>
+    <p>... all of these</p>
+  </div>
+</div>
+<br>
+<div class="liststyle">
+<ul ><% @cocktails.each do |cocktail| %>
+  <li><%= link_to cocktail.name, cocktail_path(cocktail) %>
+  <% end %>
+</ul>
+</div>
+<%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
