@@ -1,18 +1,36 @@
 <h1><%= @cocktail.name %></h1>
-<tr><%= link_to 'Add dose', new_cocktail_dose_path(@cocktail) %></tr>
-<tr>
-  <% @cocktail.doses.each do |dose| %>
-  <td><%= dose.ingredient.name %></td>
-  <td></td>
-  <td><%= dose.description %></td>
-  <td><%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %></td>
-  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-    <i class="fa fa-trash"></i>
-  <% end %>
-<% end %>
-<tr><%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-    <i class="fa fa-trash"></i>
-</tr>
-<tr><%= link_to 'Back to the bar', cocktails_path %></tr>
-<% end %>
-</tr>
+<div  class = "cocktailCard">
+  <div class="flexbox">
+    <div>
+      <div class = "cocktailPic">
+      <br><%= cl_image_tag @cocktail.photo.key, height: 300 %>
+      </div>
+    </div>
+    <br>
+    <div class="ingredients">
+      <ul>
+        <h3>INGREDIENTS</h3>
+        <% @cocktail.doses.each do |dose| %>
+        <li><h3><%= dose.ingredient.name %> <%= dose.description %>
+        <h2><%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash"></i>
+        <% end %></h3>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <br>
+    <div class="actions">
+        <h3>ACTIONS</h3>
+        <hr>
+        <%= link_to 'ADD A DOSE', new_cocktail_dose_path(@cocktail) %>"
+        <hr>
+        <%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+          DELETE
+        <% end %>
+        <hr>
+        <%= link_to 'BACK TO THE BAR', cocktails_path %>
+        <hr>
+    </div>
+  </div>
+</div>

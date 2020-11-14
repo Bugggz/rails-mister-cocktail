@@ -1,0 +1,38 @@
+.cocktailCard {
+  margin: 30px auto;
+  background-color: #1C2833;
+  padding: 20px;
+  color: white;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.actions {
+  background-color: white;
+  text-align: center;
+  padding: 10px 20px 10px 10px;
+  line-height: 30px;
+  border-radius: 15px;
+}
+
+.ingredients {
+  flex-grow: 4;
+}
+
+.actions h3 {
+  width: 150px;
+  color: #1C2833;
+  font-size: strong;
+  text-align: center;
+}
+
+h1 {
+  color: #1C2833;
+  font-size: 50px;
+}
+
+p {
+  color: white;
+}
